@@ -5,3 +5,7 @@
 执行：
 
     composer create-project modi/yii2-starter
+
+## 安装 Redis
+
+略。
