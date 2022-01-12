@@ -1,0 +1,8 @@
+version: "3"
+services:
+  fpm:
+    user: 1000:1000
+  nginx:
+    ports:
+      - 8080:80
+      - 8081:81

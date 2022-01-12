@@ -1,0 +1,12 @@
+{
+  "name": "yii2-starter",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "jquery": "3.6.0",
+    "bootstrap": "4.6.1",
+    "inputmask": "3.3.11",
+    "punycode": "1.3.2",
+    "yii2-pjax": "2.0.7"
+  }
+}
