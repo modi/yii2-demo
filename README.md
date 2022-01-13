@@ -4,7 +4,7 @@
 
 执行：
 
-    composer create-project modi/yii2-starter
+    composer create-project "modi/yii2-starter:dev-master"
 
 ## 安装依赖、初始化
 
