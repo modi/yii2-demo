@@ -67,7 +67,7 @@
 
 ### Queue 的使用
 
-创建执行业务逻辑的 Job 类：
+1）编写负责执行业务逻辑的 Job 类：
 
 ```
 namespace common\jobs;
@@ -87,7 +87,7 @@ class TestJob extends BaseObject implements JobInterface
 }
 ```
 
-提交 Job 实例：
+2）在业务场景中提交 Job 实例：
 
 ```
 use common\jobs\TestJob;
@@ -98,9 +98,11 @@ $queue = Yii::$app->queue;
 $queue->push(new TestJob(['message' => 'Job done!']));
 ```
 
-处理 Job，完成后退出，可使用命令：`php yii queue/run`
+3）运行处理 Job 的脚本
 
-监听队列，持续处理 Job，可使用命令：`php yii queue/listen`。
+处理 Job，完成后退出：`php yii queue/run`。
+
+监听队列，持续处理 Job：`php yii queue/listen`。
 
 使用 Docker Compose 运行“监听队列”脚本：
 
