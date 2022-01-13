@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'timeZone' => 'Etc/GMT+8',
+    'timeZone' => 'Asia/Shanghai',
     'aliases' => [
         '@bower' => '@node_modules',
         '@npm' => '@node_modules',
