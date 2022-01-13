@@ -7,6 +7,9 @@ return [
         '@npm' => '@node_modules',
     ],
     'vendorPath' => dirname(dirname(__DIR__)).'/vendor',
+    'bootstrap' => [
+        'queue',
+    ],
     'components' => [
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -17,6 +20,11 @@ return [
             'port' => 6379,
             'database' => 0,
             'password' => 'NOT_SAFE',
+        ],
+        'queue' => [
+            'class' => \yii\queue\redis\Queue::class,
+            'redis' => 'redis',
+            'channel' => 'queue',
         ],
     ],
 ];
