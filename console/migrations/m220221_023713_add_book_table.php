@@ -24,7 +24,7 @@ class m220221_023713_add_book_table extends Migration
      */
     public function safeDown()
     {
-        $this->dropTable('book');        
+        $this->dropTable('book');
     }
 
     /*
