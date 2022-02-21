@@ -1,6 +1,6 @@
 {
     "name": "modi/yii2-starter",
-    "description": "Yii 2 roject Template",
+    "description": "Yii 2 project Template",
     "keywords": ["yii2", "project template"],
     "type": "project",
     "license": "BSD-3-Clause",
@@ -15,7 +15,8 @@
         "yiisoft/yii2-bootstrap4": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
         "yiisoft/yii2-redis": "~2.0.0",
-        "yiisoft/yii2-queue": "^2"
+        "yiisoft/yii2-queue": "^2",
+        "vlucas/phpdotenv": "^5.4"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",
@@ -26,7 +27,8 @@
         "codeception/module-yii2": "^1.0",
         "codeception/module-filesystem": "^1.0",
         "codeception/verify": "~0.5.0 || ~1.1.0",
-        "symfony/browser-kit": ">=2.7 <=4.2.4"
+        "symfony/browser-kit": ">=2.7 <=4.2.4",
+        "yiisoft/yii2-shell": "~2.0.0"
     },
     "replace": {
         "bower-asset/inputmask": "*",

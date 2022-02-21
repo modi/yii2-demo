@@ -2,6 +2,8 @@ version: "3"
 services:
   fpm:
     image: modicn/php:7.4.23-fpm-alpine3.14-dev
+    environment:
+      XDG_CONFIG_HOME: /tmp
     volumes:
       - .:/app
     working_dir: /app
