@@ -118,3 +118,38 @@ services:
       - .:/app
     working_dir: /app
 ```
+
+## 使用 migration 管理表结构
+
+1）创建 migration 类：
+
+```
+<?php
+
+use yii\db\Migration;
+
+class m220221_023713_add_book_table extends Migration
+{
+    public function safeUp()
+    {
+        $this->createTable('book', [
+            'id' => $this->primaryKey(),
+            'name' => $this->string(100)->notNull(),
+            'author' => $this->string(60)->notNull(),
+        ]);
+    }
+
+    public function safeDown()
+    {
+        $this->dropTable('book');        
+    }
+}
+```
+
+2）更新表结构：
+
+    php yii migrate/up
+
+3）回滚/撤销：
+
+    php yii migrate/down
