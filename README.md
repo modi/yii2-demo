@@ -153,3 +153,22 @@ class m220221_023713_add_book_table extends Migration
 3）回滚/撤销：
 
     php yii migrate/down
+
+## 使用 Fixtures 管理测试样例
+
+1）创建 Fixture 类
+
+2）执行 Fixtures
+
+指定 Fixtures:
+
+    php yii fixture/load Book
+
+所有 Fixtures：
+
+    php yii fixture/load "*"
+
+3）卸载 Fixture：
+
+    php yii fixture/unload Book
+
