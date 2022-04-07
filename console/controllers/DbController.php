@@ -18,7 +18,7 @@ class DbController extends Controller
 
         $this->stdout(number_format(memory_get_peak_usage(true), 0)."\n");
 
-        $query = (new Query())->from('t1');
+        $query = (new Query())->from('t_large');
         foreach ($query->batch(1000) as $batch) {
             $this->stdout(number_format(memory_get_peak_usage(true), 0)."\n");
         }
@@ -36,7 +36,7 @@ class DbController extends Controller
         // 关闭数据库查询结果集缓存模式 @see https://www.php.net/manual/en/mysqlinfo.concepts.buffering.php
         $db->pdo->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, false);
 
-        $query = (new Query())->from('t1');
+        $query = (new Query())->from('t_large');
         foreach ($query->batch(1000) as $batch) {
             $this->stdout(number_format(memory_get_peak_usage(true), 0)."\n");
         }
