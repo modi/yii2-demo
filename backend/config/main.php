@@ -16,14 +16,9 @@ $config = [
             // this is the name of the session cookie used for login on the backend
             'name' => 'ss-backend',
         ],
-        // 'user' => [
-        //     'identityClass' => 'common\models\User',
-        //     'enableAutoLogin' => true,
-        //     'identityCookie' => [
-        //         'name' => '_id',
-        //         'httpOnly' => true,
-        //     ],
-        // ],
+        'user' => [
+            'identityClass' => 'common\models\User',
+        ],
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
