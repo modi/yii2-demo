@@ -2,8 +2,11 @@
 
 namespace backend\controllers;
 
+use common\filters\ResponseFormat;
 use common\models\User;
 use Yii;
+use yii\data\ActiveDataProvider;
+use yii\db\Query;
 use yii\filters\RateLimiter;
 use yii\web\Controller;
 use yii\web\Response;
@@ -30,6 +33,9 @@ class SiteController extends Controller
         return [
             'rateLimiter' => [
                 'class' => RateLimiter::class,
+            ],
+            'responseFormat' => [
+                'class' => ResponseFormat::class,
             ],
         ];
     }
@@ -63,5 +69,19 @@ class SiteController extends Controller
     {
         $user = new User(1);
         Yii::$app->user->login($user);
+    }
+
+    public function actionList()
+    {
+        Yii::$app->getResponse()->format = Response::FORMAT_JSON;
+
+        $query = (new Query())
+            ->from('t_large');
+
+        $dp = new ActiveDataProvider([
+            'query' => $query,
+        ]);
+
+        return $dp;
     }
 }
