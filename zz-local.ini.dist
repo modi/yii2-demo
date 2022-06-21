@@ -1,0 +1,10 @@
+xdebug.mode=develop,debug
+
+xdebug.client_host=127.0.0.1
+xdebug.client_discovery_header=""
+xdebug.discover_client_host=true
+xdebug.client_port=9003
+xdebug.start_with_request=trigger
+
+max_execution_time=1
+mysqlnd.net_read_timeout=1
