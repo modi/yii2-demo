@@ -10,7 +10,7 @@ class ResponseFormat extends ActionFilter
     public function afterAction($action, $result)
     {
         if (!$result instanceof DataProviderInterface) {
-            return true;
+            return $result;
         }
 
         $pager = $result->getPagination();
@@ -18,7 +18,7 @@ class ResponseFormat extends ActionFilter
         return [
             'items' => $result->getModels(),
             'pager' => [
-                'page' => $pager->getPage(),
+                'page' => $pager->getPage() + 1,
                 'pageSize' => $pager->getPageSize(),
             ],
         ];
